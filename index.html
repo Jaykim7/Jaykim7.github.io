@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Copilot Book Health - Jay Kim</title>
+<title>Copilot Book Health - Jay Kim's Team</title>
 <style>
 :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --green: #3fb950; --red: #f85149; --yellow: #d29922; --blue: #58a6ff; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); padding: 24px; line-height: 1.5; }
 h1 { font-size: 1.5rem; margin-bottom: 4px; }
 .subtitle { color: var(--muted); margin-bottom: 24px; font-size: 0.875rem; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
 .card-label { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
 .card-value { font-size: 1.75rem; font-weight: 600; margin-top: 4px; }
@@ -18,9 +18,10 @@ h1 { font-size: 1.5rem; margin-bottom: 4px; }
 .up { color: var(--green); }
 .down { color: var(--red); }
 .flat { color: var(--muted); }
-table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
 th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
-th { background: #1c2128; color: var(--muted); font-weight: 500; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.04em; }
+th { background: #1c2128; color: var(--muted); font-weight: 500; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.04em; cursor: pointer; }
+th:hover { color: var(--text); }
 tr:last-child td { border-bottom: none; }
 .health-green { color: var(--green); }
 .health-yellow { color: var(--yellow); }
@@ -33,73 +34,117 @@ tr:last-child td { border-bottom: none; }
 .rec-INVESTIGATE { background: #58a6ff22; color: var(--blue); }
 .rec-OVERAGE { background: #f8514922; color: var(--red); }
 .section-title { font-size: 1.1rem; margin: 24px 0 12px; }
+.tab-bar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.tab { padding: 6px 14px; border-radius: 6px; background: var(--card); border: 1px solid var(--border); color: var(--muted); cursor: pointer; font-size: 0.85rem; }
+.tab.active { background: var(--blue); color: #fff; border-color: var(--blue); }
 .empty-state { text-align: center; padding: 48px; color: var(--muted); }
 .last-updated { color: var(--muted); font-size: 0.75rem; text-align: right; margin-top: 16px; }
+.rep-bar { display: flex; gap: 4px; height: 8px; border-radius: 4px; overflow: hidden; margin-top: 8px; }
+.rep-bar span { display: block; }
+.bar-green { background: var(--green); }
+.bar-yellow { background: var(--yellow); }
+.bar-red { background: var(--red); }
 </style>
 </head>
 <body>
-<h1>Copilot Book Health Tracker</h1>
-<p class="subtitle">Jay Kim | Updated: <span id="asof">--</span></p>
+<h1>Copilot Book Health - Team Dashboard</h1>
+<p class="subtitle">Manager: Jay Kim | Updated: <span id="asof">--</span></p>
 
 <div class="grid" id="kpis"></div>
 
-<h2 class="section-title">Account Details</h2>
-<div id="table-container"></div>
+<h2 class="section-title">Rep Summary</h2>
+<div id="rep-table"></div>
 
-<h2 class="section-title">Recommendations</h2>
-<div id="recs-container"></div>
+<h2 class="section-title">Accounts Needing Attention</h2>
+<div class="tab-bar" id="tabs"></div>
+<div id="account-table"></div>
 
-<p class="last-updated">Dashboard link: <a href="https://jaykim7.github.io/" style="color:var(--blue)">https://jaykim7.github.io/</a></p>
+<h2 class="section-title">Recommendations Distribution</h2>
+<div id="recs-container" class="grid"></div>
+
+<p class="last-updated">Dashboard: <a href="https://jaykim7.github.io/" style="color:var(--blue)">https://jaykim7.github.io/</a></p>
 
 <script>
-// Data injected by the daily workflow
-const DATA = window.__COPILOT_HEALTH_DATA__ || null;
+let currentFilter = 'all';
 
 function render(data) {
-  if (!data) {
-    document.getElementById('kpis').innerHTML = '<div class="empty-state">No data yet. The daily workflow will populate this dashboard.</div>';
-    return;
-  }
+  if (!data) { document.getElementById('kpis').innerHTML = '<div class="empty-state">No data yet. The daily workflow will populate this dashboard.</div>'; return; }
   document.getElementById('asof').textContent = data.meta.as_of;
 
-  // KPIs
+  const teamTotals = data.reps.reduce((acc, r) => {
+    acc.seats += r.total_seats; acc.at_risk += r.total_at_risk;
+    acc.red += r.red; acc.yellow += r.yellow; acc.green += r.green;
+    acc.accounts += r.accounts_with_copilot;
+    return acc;
+  }, {seats:0, at_risk:0, red:0, yellow:0, green:0, accounts:0});
+
   const kpis = [
-    { label: 'Total Seats', value: data.book.seats_now, delta: data.book.seats_now - data.book.seats_1mo, suffix: ' vs 1mo' },
-    { label: 'Active Users (28d)', value: data.book.active_28d || '--', delta: null },
-    { label: 'Health Score (avg)', value: data.book.avg_health_score ? data.book.avg_health_score.toFixed(0) : '--', delta: null },
-    { label: 'Accounts', value: data.accounts.length, delta: null },
+    { label: 'Total Team Seats', value: teamTotals.seats.toLocaleString() },
+    { label: 'Seats at Risk', value: teamTotals.at_risk.toLocaleString(), cls: 'down' },
+    { label: 'Accounts w/ Copilot', value: teamTotals.accounts },
+    { label: 'Red Accounts', value: teamTotals.red, cls: 'down' },
+    { label: 'Yellow Accounts', value: teamTotals.yellow, cls: 'flat' },
+    { label: 'Green Accounts', value: teamTotals.green, cls: 'up' },
   ];
   document.getElementById('kpis').innerHTML = kpis.map(k => `
-    <div class="card">
-      <div class="card-label">${k.label}</div>
-      <div class="card-value">${typeof k.value === 'number' ? k.value.toLocaleString() : k.value}</div>
-      ${k.delta !== null ? `<div class="card-delta ${k.delta > 0 ? 'up' : k.delta < 0 ? 'down' : 'flat'}">${k.delta > 0 ? '+' : ''}${k.delta}${k.suffix || ''}</div>` : ''}
-    </div>
+    <div class="card"><div class="card-label">${k.label}</div><div class="card-value ${k.cls||''}">${k.value}</div></div>
   `).join('');
 
-  // Table
-  if (data.accounts.length) {
-    const rows = data.accounts.map(a => `<tr>
+  // Rep table
+  const repRows = data.reps.map(r => {
+    const total = r.green + r.yellow + r.red;
+    const gPct = total ? (r.green/total*100) : 0;
+    const yPct = total ? (r.yellow/total*100) : 0;
+    const rPct = total ? (r.red/total*100) : 0;
+    return `<tr>
+      <td>${r.name}</td>
+      <td>${r.total_seats.toLocaleString()}</td>
+      <td class="down">${r.total_at_risk.toLocaleString()}</td>
+      <td>${(r.avg_grr*100).toFixed(1)}%</td>
+      <td>${r.accounts_with_copilot}</td>
+      <td><span class="health-green">${r.green}</span> / <span class="health-yellow">${r.yellow}</span> / <span class="health-red">${r.red}</span>
+        <div class="rep-bar"><span class="bar-green" style="width:${gPct}%"></span><span class="bar-yellow" style="width:${yPct}%"></span><span class="bar-red" style="width:${rPct}%"></span></div>
+      </td>
+    </tr>`;
+  }).join('');
+  document.getElementById('rep-table').innerHTML = `<table><thead><tr><th>Rep</th><th>Seats</th><th>At Risk</th><th>Avg GRR</th><th>Accounts</th><th>G / Y / R</th></tr></thead><tbody>${repRows}</tbody></table>`;
+
+  // Tabs
+  const reps = ['all', ...data.reps.map(r => r.name)];
+  document.getElementById('tabs').innerHTML = reps.map(r => `<div class="tab ${r===currentFilter?'active':''}" onclick="setFilter('${r}')">${r === 'all' ? 'All Reps' : r}</div>`).join('');
+
+  // Accounts table (attention needed)
+  const accounts = (data.accounts || []).filter(a => {
+    if (currentFilter !== 'all' && a.rep !== currentFilter) return false;
+    return a.recommendation === 'SAVE' || a.recommendation === 'INVESTIGATE' || a.recommendation === 'OVERAGE' || a.health === 'Red';
+  }).sort((a,b) => (b.seats||0) - (a.seats||0)).slice(0, 30);
+
+  if (accounts.length) {
+    const rows = accounts.map(a => `<tr>
       <td>${a.name}</td>
-      <td>${a.seats || '--'}</td>
-      <td>${a.active_28d || '--'}</td>
-      <td class="health-${(a.health||'').toLowerCase()}">${a.health || '--'}</td>
+      <td>${a.rep}</td>
+      <td>${(a.seats||0).toLocaleString()}</td>
+      <td class="health-${(a.health||'green').toLowerCase()}">${a.health || '--'}</td>
       <td>${a.health_score || '--'}</td>
-      <td><span class="rec-badge rec-${a.recommendation || 'MONITOR'}">${a.recommendation || 'MONITOR'}</span></td>
+      <td>${a.grr ? (a.grr*100).toFixed(1)+'%' : '--'}</td>
+      <td><span class="rec-badge rec-${a.recommendation||'MONITOR'}">${a.recommendation||'MONITOR'}</span></td>
     </tr>`).join('');
-    document.getElementById('table-container').innerHTML = `<table><thead><tr><th>Account</th><th>Seats</th><th>Active 28d</th><th>Health</th><th>Score</th><th>Action</th></tr></thead><tbody>${rows}</tbody></table>`;
+    document.getElementById('account-table').innerHTML = `<table><thead><tr><th>Account</th><th>Rep</th><th>Seats</th><th>Health</th><th>Score</th><th>GRR</th><th>Action</th></tr></thead><tbody>${rows}</tbody></table>`;
+  } else {
+    document.getElementById('account-table').innerHTML = '<div class="empty-state">No accounts needing immediate attention</div>';
   }
 
-  // Recommendations summary
+  // Recs distribution
   const buckets = {};
-  data.accounts.forEach(a => { const b = a.recommendation || 'MONITOR'; buckets[b] = (buckets[b]||0) + 1; });
-  document.getElementById('recs-container').innerHTML = Object.entries(buckets).map(([b,c]) =>
-    `<span class="rec-badge rec-${b}" style="margin:4px;padding:4px 12px;font-size:0.85rem">${b}: ${c}</span>`
+  (data.accounts || []).forEach(a => { const b = a.recommendation || 'MONITOR'; buckets[b] = (buckets[b]||0) + 1; });
+  document.getElementById('recs-container').innerHTML = Object.entries(buckets).sort((a,b)=>b[1]-a[1]).map(([b,c]) =>
+    `<div class="card"><div class="card-label">${b}</div><div class="card-value">${c}</div></div>`
   ).join('');
 }
 
-// Try loading from data.json
-fetch('data.json').then(r => r.ok ? r.json() : null).then(d => { window.__COPILOT_HEALTH_DATA__ = d; render(d); }).catch(() => render(null));
+window.setFilter = function(f) { currentFilter = f; fetch('data.json').then(r=>r.json()).then(render); };
+
+fetch('data.json').then(r => r.ok ? r.json() : null).then(render).catch(() => render(null));
 </script>
 </body>
 </html>

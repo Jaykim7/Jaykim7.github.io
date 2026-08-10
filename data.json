@@ -1,9 +1,19 @@
 {
-  "meta": {"rep_name": "Jay Kim", "as_of": "2026-08-10", "segment": "", "region": "", "total_owned": 3},
-  "book": {"seats_now": 0, "seats_1mo": 0, "seats_3mo": 0, "active_28d": 0, "avg_health_score": 0},
-  "accounts": [
-    {"name": "FabFitFun", "entity_id": "0010V00002PHbh0QAD", "seats": 0, "active_28d": 0, "health": "Green", "health_score": 0, "recommendation": "MONITOR"},
-    {"name": "Fabitfun", "entity_id": "0010V00002PGMgqQAH", "seats": 0, "active_28d": 0, "health": "Green", "health_score": 0, "recommendation": "MONITOR"},
-    {"name": "Ping Identity Corporation", "entity_id": "001d000001hlraYAAQ", "seats": 0, "active_28d": 0, "health": "Green", "health_score": 0, "recommendation": "MONITOR"}
-  ]
+  "meta": {
+    "manager": "Jay Kim",
+    "manager_sfdc_id": "0055c000009mAZFAA2",
+    "as_of": "2026-07-20",
+    "team_size": 7,
+    "note": "Data from fact_copilot_health_score as of 2026-07-20. Vince Nguyen has no Copilot accounts with assigned users yet."
+  },
+  "reps": [
+    {"name": "Derek DeCesare", "sfdc_id": "0053o00000970v4AAA", "gh_username": "dmdecesare", "total_seats": 18509, "total_at_risk": 5647, "avg_grr": 0.922, "avg_health": 0.7, "red": 11, "yellow": 26, "green": 37, "accounts_with_copilot": 74},
+    {"name": "Cullen Hennessy", "sfdc_id": "0055c000009PxwsAAC", "gh_username": "cullenhennessy", "total_seats": 15531, "total_at_risk": 3904, "avg_grr": 0.960, "avg_health": 0.8, "red": 4, "yellow": 4, "green": 36, "accounts_with_copilot": 44},
+    {"name": "Zach Vournas", "sfdc_id": "0055c000009SeViAAK", "gh_username": "zachvournas", "total_seats": 12177, "total_at_risk": 3793, "avg_grr": 0.919, "avg_health": 0.7, "red": 4, "yellow": 16, "green": 17, "accounts_with_copilot": 37},
+    {"name": "Jonathon Geiger", "sfdc_id": "005Kg000000le45IAA", "gh_username": "geigerjonathon", "total_seats": 11931, "total_at_risk": 3898, "avg_grr": 0.931, "avg_health": 0.7, "red": 7, "yellow": 9, "green": 28, "accounts_with_copilot": 44},
+    {"name": "Vince Leoni", "sfdc_id": "0050V000007D04hQAC", "gh_username": "vinceleoni", "total_seats": 9492, "total_at_risk": 3073, "avg_grr": 0.949, "avg_health": 0.7, "red": 8, "yellow": 13, "green": 18, "accounts_with_copilot": 39},
+    {"name": "Vince Nguyen", "sfdc_id": "0055c00000B2kSGAAZ", "gh_username": "vincinity88", "total_seats": 0, "total_at_risk": 0, "avg_grr": 0, "avg_health": 0, "red": 0, "yellow": 0, "green": 0, "accounts_with_copilot": 0},
+    {"name": "Jay Kim", "sfdc_id": "0055c000009mAZFAA2", "gh_username": "jaykim7", "total_seats": 0, "total_at_risk": 0, "avg_grr": 0, "avg_health": 0, "red": 0, "yellow": 0, "green": 0, "accounts_with_copilot": 0}
+  ],
+  "accounts": []
 }
