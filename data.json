@@ -1,0 +1,9 @@
+{
+  "meta": {"rep_name": "Jay Kim", "as_of": "2026-08-10", "segment": "", "region": "", "total_owned": 3},
+  "book": {"seats_now": 0, "seats_1mo": 0, "seats_3mo": 0, "active_28d": 0, "avg_health_score": 0},
+  "accounts": [
+    {"name": "FabFitFun", "entity_id": "0010V00002PHbh0QAD", "seats": 0, "active_28d": 0, "health": "Green", "health_score": 0, "recommendation": "MONITOR"},
+    {"name": "Fabitfun", "entity_id": "0010V00002PGMgqQAH", "seats": 0, "active_28d": 0, "health": "Green", "health_score": 0, "recommendation": "MONITOR"},
+    {"name": "Ping Identity Corporation", "entity_id": "001d000001hlraYAAQ", "seats": 0, "active_28d": 0, "health": "Green", "health_score": 0, "recommendation": "MONITOR"}
+  ]
+}
