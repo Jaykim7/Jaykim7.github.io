@@ -1,8 +1,8 @@
 {
   "meta": {
     "manager": "Jay Kim",
-    "refreshed_at": "2026-08-25T15:07:25Z",
-    "as_of": "2026-08-23",
+    "refreshed_at": "2026-08-26T16:09:49Z",
+    "as_of": "2026-08-24",
     "team_size": 7
   },
   "reps": [
@@ -129,7 +129,7 @@
       "active_28d": 357,
       "health": "Yellow",
       "health_score": 0.71,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -137,7 +137,7 @@
       "entity_id": "0010V00002KKcx8QAD",
       "rep": "Cullen Hennessy",
       "seats": 564,
-      "active_28d": 434,
+      "active_28d": 433,
       "health": "Yellow",
       "health_score": 0.72,
       "grr": 0.98,
@@ -151,7 +151,7 @@
       "active_28d": 377,
       "health": "Green",
       "health_score": 0.82,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -203,7 +203,7 @@
       "entity_id": "0013o00002TZRNmAAP",
       "rep": "Cullen Hennessy",
       "seats": 458,
-      "active_28d": 370,
+      "active_28d": 369,
       "health": "Green",
       "health_score": 0.82,
       "grr": 0.92,
@@ -247,7 +247,7 @@
       "entity_id": "001d000001TXtpgAAD",
       "rep": "Cullen Hennessy",
       "seats": 377,
-      "active_28d": 322,
+      "active_28d": 323,
       "health": "Green",
       "health_score": 0.91,
       "grr": 0.99,
@@ -283,7 +283,7 @@
       "active_28d": 196,
       "health": "Yellow",
       "health_score": 0.73,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -327,7 +327,7 @@
       "active_28d": 102,
       "health": "Yellow",
       "health_score": 0.71,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -381,8 +381,8 @@
       "seats": 4,
       "active_28d": 4,
       "health": "Green",
-      "health_score": 1.0,
-      "grr": 1.0,
+      "health_score": 1,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -393,7 +393,7 @@
       "active_28d": 1,
       "health": "Red",
       "health_score": 0.11,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -412,7 +412,7 @@
       "entity_id": "0010V00002M8MRWQA3",
       "rep": "Derek DeCesare",
       "seats": 814,
-      "active_28d": 591,
+      "active_28d": 590,
       "health": "Yellow",
       "health_score": 0.71,
       "grr": 0.99,
@@ -438,7 +438,7 @@
       "health": "Yellow",
       "health_score": 0.68,
       "grr": 0.99,
-      "recommendation": "EXPAND"
+      "recommendation": "MONITOR"
     },
     {
       "name": "Fullsteam",
@@ -489,7 +489,7 @@
       "entity_id": "0013o00002S6G2lAAF",
       "rep": "Derek DeCesare",
       "seats": 389,
-      "active_28d": 327,
+      "active_28d": 326,
       "health": "Yellow",
       "health_score": 0.71,
       "grr": 0.97,
@@ -503,7 +503,7 @@
       "active_28d": 266,
       "health": "Yellow",
       "health_score": 0.69,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -511,7 +511,7 @@
       "entity_id": "001d000001yYoUrAAK",
       "rep": "Derek DeCesare",
       "seats": 354,
-      "active_28d": 300,
+      "active_28d": 298,
       "health": "Green",
       "health_score": 0.8,
       "grr": 0.97,
@@ -522,7 +522,7 @@
       "entity_id": "001d000001Q3vBZAAZ",
       "rep": "Derek DeCesare",
       "seats": 345,
-      "active_28d": 284,
+      "active_28d": 283,
       "health": "Yellow",
       "health_score": 0.69,
       "grr": 0.88,
@@ -577,7 +577,7 @@
       "entity_id": "0010V00002DT2jBQAT",
       "rep": "Derek DeCesare",
       "seats": 248,
-      "active_28d": 204,
+      "active_28d": 205,
       "health": "Green",
       "health_score": 0.79,
       "grr": 0.98,
@@ -588,7 +588,7 @@
       "entity_id": "0015c00002txa9eAAA",
       "rep": "Derek DeCesare",
       "seats": 240,
-      "active_28d": 169,
+      "active_28d": 168,
       "health": "Yellow",
       "health_score": 0.6,
       "grr": 0.99,
@@ -624,7 +624,7 @@
       "active_28d": 132,
       "health": "Yellow",
       "health_score": 0.65,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -635,7 +635,7 @@
       "active_28d": 111,
       "health": "Green",
       "health_score": 0.78,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -665,10 +665,10 @@
       "entity_id": "0010V00002NGCoXQAX",
       "rep": "Derek DeCesare",
       "seats": 146,
-      "active_28d": 129,
+      "active_28d": 130,
       "health": "Green",
       "health_score": 0.86,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -723,7 +723,7 @@
       "active_28d": 68,
       "health": "Yellow",
       "health_score": 0.72,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -778,7 +778,7 @@
       "active_28d": 22,
       "health": "Red",
       "health_score": 0.48,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -789,7 +789,7 @@
       "active_28d": 54,
       "health": "Green",
       "health_score": 0.89,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -833,7 +833,7 @@
       "active_28d": 3,
       "health": "Red",
       "health_score": 0.31,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -855,7 +855,7 @@
       "active_28d": 4,
       "health": "Green",
       "health_score": 0.87,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -877,7 +877,7 @@
       "active_28d": 2,
       "health": "Yellow",
       "health_score": 0.68,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "EXPAND"
     },
     {
@@ -899,7 +899,7 @@
       "active_28d": 1,
       "health": "Green",
       "health_score": 0.8,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -965,7 +965,7 @@
       "active_28d": 436,
       "health": "Green",
       "health_score": 0.79,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -973,7 +973,7 @@
       "entity_id": "0010V00002PGkeqQAD",
       "rep": "Jonathon Geiger",
       "seats": 472,
-      "active_28d": 388,
+      "active_28d": 387,
       "health": "Green",
       "health_score": 0.84,
       "grr": 0.99,
@@ -995,7 +995,7 @@
       "entity_id": "0010V00002Ox2t2QAB",
       "rep": "Jonathon Geiger",
       "seats": 341,
-      "active_28d": 291,
+      "active_28d": 292,
       "health": "Green",
       "health_score": 0.84,
       "grr": 0.97,
@@ -1017,7 +1017,7 @@
       "entity_id": "0015c00002p1PiZAAU",
       "rep": "Jonathon Geiger",
       "seats": 317,
-      "active_28d": 272,
+      "active_28d": 271,
       "health": "Yellow",
       "health_score": 0.72,
       "grr": 0.99,
@@ -1061,7 +1061,7 @@
       "entity_id": "0013o00002ZK5LKAA1",
       "rep": "Jonathon Geiger",
       "seats": 255,
-      "active_28d": 180,
+      "active_28d": 182,
       "health": "Yellow",
       "health_score": 0.56,
       "grr": 0.84,
@@ -1083,7 +1083,7 @@
       "entity_id": "0010V00002NF0yrQAD",
       "rep": "Jonathon Geiger",
       "seats": 209,
-      "active_28d": 93,
+      "active_28d": 92,
       "health": "Yellow",
       "health_score": 0.63,
       "grr": 0.99,
@@ -1105,10 +1105,10 @@
       "entity_id": "0010V00002DT2jrQAD",
       "rep": "Jonathon Geiger",
       "seats": 204,
-      "active_28d": 181,
+      "active_28d": 180,
       "health": "Green",
       "health_score": 0.79,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1116,7 +1116,7 @@
       "entity_id": "0010V00002C6xrjQAB",
       "rep": "Jonathon Geiger",
       "seats": 192,
-      "active_28d": 65,
+      "active_28d": 66,
       "health": "Red",
       "health_score": 0.51,
       "grr": 0.99,
@@ -1127,7 +1127,7 @@
       "entity_id": "0010V00002NG8HwQAL",
       "rep": "Jonathon Geiger",
       "seats": 152,
-      "active_28d": 126,
+      "active_28d": 125,
       "health": "Green",
       "health_score": 0.78,
       "grr": 0.9,
@@ -1152,7 +1152,7 @@
       "active_28d": 88,
       "health": "Green",
       "health_score": 0.81,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1163,7 +1163,7 @@
       "active_28d": 15,
       "health": "Red",
       "health_score": 0.43,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -1174,7 +1174,7 @@
       "active_28d": 73,
       "health": "Green",
       "health_score": 0.92,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1182,10 +1182,10 @@
       "entity_id": "0013o00002TbQ9sAAF",
       "rep": "Jonathon Geiger",
       "seats": 74,
-      "active_28d": 63,
+      "active_28d": 61,
       "health": "Yellow",
       "health_score": 0.56,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1196,7 +1196,7 @@
       "active_28d": 24,
       "health": "Red",
       "health_score": 0.45,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -1229,7 +1229,7 @@
       "active_28d": 9,
       "health": "Green",
       "health_score": 0.9,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1240,7 +1240,7 @@
       "active_28d": 10,
       "health": "Green",
       "health_score": 0.83,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1251,7 +1251,7 @@
       "active_28d": 7,
       "health": "Yellow",
       "health_score": 0.71,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1262,7 +1262,7 @@
       "active_28d": 4,
       "health": "Red",
       "health_score": 0.11,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -1273,7 +1273,7 @@
       "active_28d": 0,
       "health": "Red",
       "health_score": 0.35,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -1284,7 +1284,7 @@
       "active_28d": 1,
       "health": "Red",
       "health_score": 0.49,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -1295,7 +1295,7 @@
       "active_28d": 1,
       "health": "Yellow",
       "health_score": 0.68,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1306,7 +1306,7 @@
       "active_28d": 0,
       "health": "Red",
       "health_score": 0.35,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -1314,7 +1314,7 @@
       "entity_id": "0010V00002NG8IeQAL",
       "rep": "Vince Leoni",
       "seats": 1037,
-      "active_28d": 787,
+      "active_28d": 786,
       "health": "Green",
       "health_score": 0.79,
       "grr": 0.97,
@@ -1416,7 +1416,7 @@
       "active_28d": 250,
       "health": "Green",
       "health_score": 0.88,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1435,7 +1435,7 @@
       "entity_id": "0013o00002VYJHVAA5",
       "rep": "Vince Leoni",
       "seats": 211,
-      "active_28d": 171,
+      "active_28d": 172,
       "health": "Green",
       "health_score": 0.83,
       "grr": 0.99,
@@ -1457,7 +1457,7 @@
       "entity_id": "0010V00002PF66nQAD",
       "rep": "Vince Leoni",
       "seats": 151,
-      "active_28d": 76,
+      "active_28d": 77,
       "health": "Red",
       "health_score": 0.38,
       "grr": 0.89,
@@ -1559,7 +1559,7 @@
       "active_28d": 48,
       "health": "Yellow",
       "health_score": 0.71,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1581,7 +1581,7 @@
       "active_28d": 20,
       "health": "Red",
       "health_score": 0.48,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -1592,7 +1592,7 @@
       "active_28d": 4,
       "health": "Red",
       "health_score": 0.45,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -1614,7 +1614,7 @@
       "active_28d": 12,
       "health": "Green",
       "health_score": 0.9,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1636,7 +1636,7 @@
       "active_28d": 4,
       "health": "Yellow",
       "health_score": 0.64,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "INVESTIGATE"
     },
     {
@@ -1647,7 +1647,7 @@
       "active_28d": 4,
       "health": "Yellow",
       "health_score": 0.63,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1657,8 +1657,8 @@
       "seats": 4,
       "active_28d": 3,
       "health": "Green",
-      "health_score": 1.0,
-      "grr": 1.0,
+      "health_score": 1,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1757,7 +1757,7 @@
       "active_28d": 242,
       "health": "Yellow",
       "health_score": 0.66,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1798,7 +1798,7 @@
       "entity_id": "001d000001jjJcxAAE",
       "rep": "Zach Vournas",
       "seats": 204,
-      "active_28d": 177,
+      "active_28d": 176,
       "health": "Green",
       "health_score": 0.88,
       "grr": 0.99,
@@ -1820,7 +1820,7 @@
       "entity_id": "0013o00002ZJrdfAAD",
       "rep": "Zach Vournas",
       "seats": 186,
-      "active_28d": 120,
+      "active_28d": 119,
       "health": "Yellow",
       "health_score": 0.65,
       "grr": 0.99,
@@ -1886,7 +1886,7 @@
       "entity_id": "0010V00002RF6ZoQAL",
       "rep": "Zach Vournas",
       "seats": 91,
-      "active_28d": 71,
+      "active_28d": 70,
       "health": "Green",
       "health_score": 0.84,
       "grr": 0.99,
@@ -1900,7 +1900,7 @@
       "active_28d": 49,
       "health": "Red",
       "health_score": 0.53,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
@@ -1911,7 +1911,7 @@
       "active_28d": 48,
       "health": "Green",
       "health_score": 0.88,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "MONITOR"
     },
     {
@@ -1933,7 +1933,7 @@
       "active_28d": 21,
       "health": "Red",
       "health_score": 0.51,
-      "grr": 1.0,
+      "grr": 1,
       "recommendation": "SAVE"
     },
     {
