@@ -48,7 +48,7 @@ tr:last-child td { border-bottom: none; }
 </head>
 <body>
 <h1>Copilot Book Health - Team Dashboard</h1>
-<p class="subtitle">Manager: Jay Kim | Updated: <span id="asof">--</span></p>
+<p class="subtitle">Manager: Jay Kim | Last refreshed: <span id="refreshed-at">--</span> | Data through: <span id="asof">--</span></p>
 
 <div class="grid" id="kpis"></div>
 
@@ -69,6 +69,7 @@ let currentFilter = 'all';
 
 function render(data) {
   if (!data) { document.getElementById('kpis').innerHTML = '<div class="empty-state">No data yet. The daily workflow will populate this dashboard.</div>'; return; }
+  document.getElementById('refreshed-at').textContent = data.meta.refreshed_at;
   document.getElementById('asof').textContent = data.meta.as_of;
 
   const teamTotals = data.reps.reduce((acc, r) => {
